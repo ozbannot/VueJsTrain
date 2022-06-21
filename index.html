@@ -11,12 +11,17 @@
   <div id="app">
     {{ number }}
     <button v-on:click="countUp">カウントアップ</button>
+    <div v-if="number">条件次第で表示</div>
+    <ul>
+      <li v-for="item in items">{{ item }}</li>
+    </ul>
   </div>
   <script>
     new Vue({
       el:"#app",
       data:{
-        number:0
+        number:0,
+        items:[1,2,3]
       },
       methods:{
         countUp:function(){
